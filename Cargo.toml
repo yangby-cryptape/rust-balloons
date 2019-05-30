@@ -1,8 +1,14 @@
 [package]
 name = "balloons"
-version = "0.0.0"
+version = "0.1.0"
 authors = ["Boyu Yang <yangby@cryptape.com>"]
 edition = "2018"
+description = "A rust implementation of Balloon Hashing."
+homepage = "https://github.com/yangby-cryptape/rust-balloons"
+repository = "https://github.com/yangby-cryptape/rust-balloons"
+keywords = ["hash", "balloon"]
+categories = ["algorithms"]
+license = "Apache-2.0 OR MIT"
 
 [dependencies]
 property = "~0.2"
