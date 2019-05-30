@@ -38,8 +38,21 @@ jobs:
       script:
         - rustup component add rustfmt
         - cargo fmt --all -- --check
+        - |
+            cd balloons/blake2b256
+            cargo fmt --all -- --check
     - stage: Check
       name: Clippy
       script:
         - rustup component add clippy
         - cargo clippy --all --all-targets --all-features
+        - |
+            cp -f Cargo.lock balloons/blake2b256/
+            rm -rf balloons/blake2b256/target
+            mv target balloons/blake2b256/target
+            cd balloons/blake2b256
+            cargo clippy --all --all-targets --all-features
+    - stage: Test
+      name: Example
+      script:
+        - cd balloons/blake2b256 && cargo test --verbose --all

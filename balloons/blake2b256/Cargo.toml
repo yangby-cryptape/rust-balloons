@@ -1,0 +1,18 @@
+[package]
+name = "blake2b256-balloon"
+version = "0.1.0"
+authors = ["Boyu Yang <yangby@cryptape.com>"]
+edition = "2018"
+description = "A rust implementation of Balloon Hashing based on blake2b-256."
+homepage = "https://github.com/yangby-cryptape/rust-balloons"
+repository = "https://github.com/yangby-cryptape/rust-balloons"
+keywords = ["hash", "balloon"]
+categories = ["algorithms"]
+license = "Apache-2.0 OR MIT"
+
+[dependencies]
+balloons = { package = "balloons", version = "~0.1", path = "../../" }
+blake2b = { package = "blake2b-rs", version = "~0.1" }
+
+[dev-dependencies]
+slices = "~0.1"
