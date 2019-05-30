@@ -6,14 +6,17 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-//! A rust implementation of [Balloon Hashing].
-//!
-//! [Balloon Hashing]: https://crypto.stanford.edu/balloon/
+use std::result;
 
-mod balloon;
-mod error;
-mod prelude;
+#[derive(Debug)]
+pub enum Error {
+    Custom(String),
+}
 
-pub use crate::error::{Error, Result};
-pub use crate::prelude::{FixedHash, FixedUint, HashAlgo};
-pub use balloon::{Balloon, BalloonBuilder};
+impl Error {
+    pub fn custom(msg: String) -> Self {
+        Error::Custom(msg)
+    }
+}
+
+pub type Result<T> = result::Result<T, Error>;
