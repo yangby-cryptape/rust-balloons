@@ -14,7 +14,10 @@ use crate::{FixedHash, FixedUint, HashAlgo, Result};
 
 /// An abstract implementation of [Balloon Hashing].
 ///
-/// Can be created by the `BalloonBuilder`.
+/// Can be created by the [`BalloonBuilder`].
+///
+/// [Balloon Hashing]: https://crypto.stanford.edu/balloon/
+/// [`BalloonBuilder`]: struct.BalloonBuilder.html
 pub struct Balloon<U, H, A>
 where
     U: FixedUint,
@@ -33,7 +36,9 @@ where
     _a: PhantomData<A>,
 }
 
-/// The builder of `Balloon`.
+/// The builder of [`Balloon`].
+///
+/// [`Balloon`]: struct.Balloon.html
 #[derive(Property)]
 #[property(get(disable), set(public, prefix = "", suffix = ""), mut(disable))]
 pub struct BalloonBuilder {

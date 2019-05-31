@@ -6,15 +6,22 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
+#[doc(hidden)]
 pub mod kernel;
 
 use balloons::{Balloon, BalloonBuilder};
 
-/// The builder of `Blake2b256Balloon`.
+/// The builder of [`Blake2b256Balloon`].
+///
+/// [`Blake2b256Balloon`]: type.Blake2b256Balloon.html
 #[derive(Default)]
 pub struct Blake2b256BalloonBuilder(BalloonBuilder);
 
-/// The builder of `Blake2b256Balloon`.
+/// Balloon Hashing based on blake2b-256.
+///
+/// Can be created by [`Blake2b256BalloonBuilder`].
+///
+/// [`Blake2b256BalloonBuilder`]: struct.Blake2b256BalloonBuilder.html
 pub type Blake2b256Balloon = Balloon<kernel::U256, kernel::H256, kernel::Blake2b256>;
 
 impl ::std::ops::Deref for Blake2b256BalloonBuilder {

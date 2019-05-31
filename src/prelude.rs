@@ -10,7 +10,9 @@ use std::convert::AsRef;
 
 use crate::Result;
 
-/// A hash algorithm which is used in balloon hashing algorithm.
+/// A hash algorithm which is used in [balloon hashing algorithm].
+///
+/// [balloon hashing algorithm]: https://crypto.stanford.edu/balloon/
 pub trait HashAlgo<U, H>
 where
     U: FixedUint,
@@ -28,9 +30,12 @@ where
     }
 }
 
-/// The return type of balloon hashing algorithm.
+/// The return type of [balloon hashing algorithm].
 ///
-/// Also, it's the return type of the internal hash algorithm.
+/// Also, it's the return type of the [internal hash algorithm].
+///
+/// [balloon hashing algorithm]: https://crypto.stanford.edu/balloon/
+/// [internal hash algorithm]: trait.HashAlgo.html
 pub trait FixedHash<U>: AsRef<[u8]>
 where
     U: FixedUint,
@@ -41,7 +46,10 @@ where
     }
 }
 
-/// A unsigned integer which can be converted from the return of the internal hash algorithm.
+/// A unsigned integer which can be converted from [the return] of the [internal hash algorithm].
+///
+/// [the return]: trait.FixedHash.html
+/// [internal hash algorithm]: trait.HashAlgo.html
 pub trait FixedUint {
     /// Convert from slice.
     fn from_slice(slice: &[u8]) -> Self;
